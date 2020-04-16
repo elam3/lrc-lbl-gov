@@ -1,0 +1,1410 @@
+<a href="https://sites.google.com/a/lbl.gov/high-performance-computing-services-group/lbnl-supercluster/lawrencium#desc">Cluster Description</a> | <a href="https://sites.google.com/a/lbl.gov/high-performance-computing-services-group/lbnl-supercluster/lawrencium#dtn">Login and Data Transfer</a> | <a href="https://sites.google.com/a/lbl.gov/high-performance-computing-services-group/lbnl-supercluster/lawrencium#hwconfig">HW Configuration</a> | <a href="https://sites.google.com/a/lbl.gov/high-performance-computing-services-group/lbnl-supercluster/lawrencium#backup">Storage and Backup</a> | <a href="https://sites.google.com/a/lbl.gov/high-performance-computing-services-group/lbnl-supercluster/lawrencium#recharge">Recharge Model </a>| <a href="https://sites.google.com/a/lbl.gov/high-performance-computing-services-group/lbnl-supercluster/lawrencium#scheduler">Scheduler Configuration</a> | <a href="https://sites.google.com/a/lbl.gov/high-performance-computing-services-group/lbnl-supercluster/lawrencium#lowpriority">Low Priority QoS Jobs</a> | <a href="https://sites.google.com/a/lbl.gov/high-performance-computing-services-group/lbnl-supercluster/lawrencium#eg">Job Script Examples</a>
+<h4><br>
+</h4>
+
+<a name="desc"></a>
+<h4>Cluster Description:</h4>
+<div>LAWRENCIUM is the platform for the<a href="https://sites.google.com/a/lbl.gov/hpc/condo-computing" target="_blank">LBNL Condo Cluster Computing</a>
+ (LC3) program, which provides a sustainable way to meet the midrange computing requirement for Berkeley Lab. LAWRENCIUM is part of the LBNL Supercluster and shares the same Supercluster infrastructure. This includes the system management software, software module farm, scheduler, storage and backend network infrastructure.</div>
+<br>
+
+<a name="dtn"></a>
+<h4>Login and Data Transfer:</h4>
+<div>LAWRENCIUM uses <a href="https://sites.google.com/a/lbl.gov/high-performance-computing-services-group/authentication/linotp-usage" target="_blank">One Time Password (OTP)</a> for login authentication for all the services provided below. Please also refer to <a href="https://sites.google.com/a/lbl.gov/high-performance-computing-services-group/getting-started/data-transfer">Data Transfer</a> page for additional information.<br>
+<ul><li>Login server: lrc-login.lbl.gov</li>
+<li>DATA transfer server: lrc-xfer.lbl.gov</li>
+<li>Globus Online endpoint: lbnl#lrc</li></ul>
+</div>
+<br>
+
+<a name="hwconfig"></a>
+<h4>Hardware Configuration:</h4>
+<div>LAWRENCIUM is composed of multiple generations of hardware hence it is physically separated into several partitions to facilitate management and to meet the requirements to host Condo projects. The following table lists the hardware configuration for each individual partition. <br>
+</div>
+<div><br>
+</div>
+<div>&nbsp;</div>
+<div>
+<table border="1" cellspacing="0" style="text-align:center">
+<tbody>
+<tr>
+<th style="background:none repeat scroll 0% 0% black;color:white;text-align:center">Partition</th>
+<th style="background:none repeat scroll 0% 0% black;color:white;text-align:center">Nodes</th>
+<th style="background:none repeat scroll 0% 0% black;color:white;text-align:center">Node List</th>
+<th style="background:none repeat scroll 0% 0% black;color:white;text-align:center">CPU</th>
+<th style="background:none repeat scroll 0% 0% black;color:white;text-align:center">Cores</th>
+<th style="background:none repeat scroll 0% 0% black;color:white;text-align:center">Memory</th>
+<th style="background:none repeat scroll 0% 0% black;color:white;text-align:center">Infiniband</th>
+<th style="background:none repeat scroll 0% 0% black;color:white;text-align:center">Accelerator<br>
+</th>
+</tr>
+
+<tr>
+<td style="text-align:center;vertical-align:middle">lr3<br>
+</td>
+<td style="text-align:center;vertical-align:middle">337<br>
+</td>
+<td style="text-align:center">
+<table border="1" cellspacing="0" style="border-collapse:collapse;border-color:rgb(136,136,136);border-width:1px">
+<tbody>
+<tr>
+<td style="vertical-align:middle;width:132px;height:35px">n 0[000-163].lr3<br>
+n0[309-336].lr3</td>
+</tr>
+<tr>
+<td style="vertical-align:middle;width:132px;height:35px">n0[164-203].lr3<br>
+n0[213-308].lr3</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td style="text-align:center">
+<table border="1" cellspacing="0" style="border-collapse:collapse;border-color:rgb(136,136,136);border-width:1px">
+<tbody>
+<tr>
+<td style="vertical-align:middle;width:166px;height:35px">INTEL XEON E5-2670
+</td>
+</tr>
+<tr>
+<td style="vertical-align:middle;width:166px;height:35px">INTEL XEON E5-2670 v2</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td style="text-align:center">&nbsp;<br>
+16<br>
+<br>
+20</td>
+<td style="text-align:center">
+<table border="1" cellspacing="0" style="border-collapse:collapse;border-color:rgb(136,136,136);border-width:1px">
+<tbody>
+<tr>
+<td style="vertical-align:middle;width:60px;height:35px">64GB<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:middle;width:60px;height:35px">64GB</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td style="text-align:center;vertical-align:middle">FDR</td>
+<td style="text-align:center;vertical-align:middle">-</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">lr4</td>
+<td style="text-align:center;vertical-align:middle">141</td>
+<td style="text-align:center;vertical-align:middle">n0[000-095].lr4<br>
+n0[099-110].lr4<br>
+n0[112-135].lr4<br>
+n0[139-147].lr4</td>
+<td style="text-align:center;vertical-align:middle">INTEL XEON E5-2670 v3</td>
+<td style="text-align:center;vertical-align:middle">24</td>
+<td style="text-align:center;vertical-align:middle">64GB</td>
+<td style="text-align:center;vertical-align:middle">FDR</td>
+<td style="text-align:center;vertical-align:middle">-</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">lr5</td>
+<td style="text-align:center;vertical-align:middle">188</td>
+<td style="text-align:center;vertical-align:middle">n0[000-143].lr5<br>
+n0[148-191].lr5</td>
+<td style="text-align:center;vertical-align:middle">INTEL XEON E5-2680 v4<br>
+INTEL XEON ES-2640 v4</td>
+<td style="text-align:center;vertical-align:middle">28<br>
+<br>
+20</td>
+<td style="text-align:center;vertical-align:middle">64GB<br>
+<br>
+128GB</td>
+<td style="text-align:center;vertical-align:middle">FDR<br>
+QDR</td>
+<td style="text-align:center;vertical-align:middle">-</td>
+</tr>
+<tr>
+<td style="text-align:center"><br>
+lr6</td>
+<td style="text-align:center"><br>
+88</td>
+<td style="text-align:center"><br>
+n0[000-087].lr6 <br>
+</td>
+<td style="text-align:center"><br>
+INTEL Gold 6130&nbsp; (Skylake)<br>
+</td>
+<td style="text-align:center"><br>
+32</td>
+<td style="text-align:center">96GB<br>
+<br>
+128GB<br>
+<br>
+</td>
+<td style="text-align:center"><br>
+FDR</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">&nbsp; &nbsp;<br>
+&nbsp;<br>
+lr6<span>&nbsp;&nbsp; &nbsp;</span></td>
+<td style="text-align:center"><br>
+<br>
+156</td>
+<td>&nbsp;<br>
+<br>
+n0[088-115].lr6<br>
+<hr>
+&nbsp;n0[144-271].lr6</td>
+<td>&nbsp;<br>
+<br>
+INTEL XEON Gold 5218&nbsp; &nbsp;<br>
+<hr>
+INTEL XEON Gold 6230<br>
+<br>
+(CASCADE)</td>
+<td><br>
+&nbsp;<br>
+32<span>&nbsp;<br>
+</span>
+<hr>
+<span>40<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span></td>
+<td>&nbsp; <br>
+<br>
+96GB<br>
+<hr>
+&nbsp; 128GB</td>
+<td>&nbsp; &nbsp; <br>
+&nbsp;<br>
+FDR</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">lr_bigmem<br>
+</td>
+<td style="text-align:center;vertical-align:middle">2<br>
+</td>
+<td style="text-align:center">
+<table border="1" cellspacing="0" style="border-collapse:collapse;border-color:rgb(136,136,136);border-width:1px">
+<tbody>
+<tr>
+<td style="vertical-align:middle;width:119px;height:31px">n0210.lr3</td>
+</tr>
+<tr>
+<td style="vertical-align:middle;width:119px;height:36px">n0211.lr3</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td style="text-align:center">
+<table border="1" cellspacing="0" style="border-collapse:collapse;border-color:rgb(136,136,136);border-width:1px">
+<tbody>
+<tr>
+<td style="vertical-align:middle;width:166px;height:35px">INTEL XEON E5-4620</td>
+</tr>
+<tr>
+<td style="vertical-align:middle;width:166px;height:35px">INTEL XEON E7-4860 v2</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td style="text-align:center"><br>
+32<br>
+<br>
+48</td>
+<td style="text-align:center">
+<table border="1" cellspacing="0" style="border-collapse:collapse;border-color:rgb(136,136,136);border-width:1px">
+<tbody>
+<tr>
+<td style="vertical-align:middle;width:60px;height:35px">1024GB</td>
+</tr>
+<tr>
+<td style="vertical-align:middle;width:60px;height:35px">1024GB</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td style="text-align:center;vertical-align:middle">QDR</td>
+<td style="text-align:center;vertical-align:middle">-</td>
+</tr>
+
+<tr>
+<td style="text-align:center;vertical-align:middle">es1 <br>
+</td>
+<td style="text-align:center"><br>
+<br>
+24<br>
+</td>
+<td style="text-align:center">
+<table border="1" cellspacing="0" style="border-collapse:collapse;border-color:rgb(136,136,136);border-width:1px">
+<tbody>
+<tr>
+<td style="vertical-align:middle;width:132px;height:35px">n[0000-0011].es1</td>
+</tr>
+<tr>
+<td style="vertical-align:middle;width:132px;height:35px">n[0012-0023].es1</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td style="text-align:center;vertical-align:middle">Intel XEON E5-2623</td>
+<td style="text-align:center;vertical-align:middle">8</td>
+<td style="text-align:center">
+<table border="1" cellspacing="0" style="border-collapse:collapse;border-color:rgb(136,136,136);border-width:1px">
+<tbody>
+<tr>
+<td style="vertical-align:middle;width:60px;height:35px">64GB</td>
+</tr>
+<tr>
+<td style="vertical-align:middle;width:60px;height:35px">187GB</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td style="text-align:center;vertical-align:middle">FDR</td>
+<td style="text-align:center">
+<table border="1" cellspacing="0" style="border-collapse:collapse;border-color:rgb(136,136,136);border-width:1px">
+<tbody>
+<tr>
+<td style="vertical-align:middle;width:100px;height:35px">4X NVIDIA<br>
+1080TI<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:middle;width:100px;height:35px">2X NVIDIA<br>
+V100<br>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">cf1</td>
+<td style="text-align:center;vertical-align:middle">72</td>
+<td style="text-align:center;vertical-align:middle">n0[000-071].cf1</td>
+<td style="text-align:center;vertical-align:middle">INTEL XEON PHI 7210</td>
+<td style="text-align:center;vertical-align:middle">64</td>
+<td style="text-align:center;vertical-align:middle">192GB</td>
+<td style="text-align:center;vertical-align:middle">FDR</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">cm1</td>
+<td style="text-align:center;vertical-align:middle">14</td>
+<td style="text-align:center;vertical-align:middle">n0[000-013].cm1</td>
+<td style="text-align:center;vertical-align:middle">AMD EPYC </td>
+<td style="text-align:center;vertical-align:middle">48</td>
+<td style="text-align:center;vertical-align:middle">256GB</td>
+<td style="text-align:center;vertical-align:middle">FDR</td>
+</tr>
+<tr>
+<td>&nbsp;<br>
+<br>
+csd_lr6_96<br>
+<span>(private)&nbsp;</span></td>
+<td>&nbsp;<br>
+<br>
+60<span>&nbsp;</span></td>
+<td><br>
+n0[088-103].lr6<br>
+<hr>
+n0[228-271].lr6</td>
+<td><br>
+INTEL XEON GOLD 5218<br>
+<hr>
+INTEL XEON GOLD 6230&nbsp;&nbsp;</td>
+<td>&nbsp;<br>
+32<br>
+<hr>
+40</td>
+<td>&nbsp;<br>
+96GB<span>&nbsp;</span></td>
+<td>&nbsp;<br>
+<br>
+FDR</td>
+</tr>
+<tr>
+<td>&nbsp;<br>
+csd_lr6_192<br>
+(private)</td>
+<td>&nbsp;<br>
+84</td>
+<td>&nbsp;<br>
+n0[144-227].lr6</td>
+<td><br>
+Intel XEON Gold&nbsp;&nbsp;<br>
+6230<br>
+<br>
+</td>
+<td>&nbsp;<br>
+40</td>
+<td>&nbsp;<br>
+192GB</td>
+<td>&nbsp;<br>
+FDR</td>
+</tr>
+<tr>
+</tr>
+</tbody>
+</table>
+</div>
+<br>
+<a name="backup"></a>
+<h4><a href="/"></a>Storage and Backup:</h4>
+<div>LAWRENCIUM cluster users are entitled to access the following storage systems so please get familiar with them.<br>
+<br>
+<table align="center" border="1" cellspacing="0">
+<tbody>
+<tr>
+<th style="background:none repeat scroll 0% 0% black;color:white;text-align:center">Name</th>
+<th style="background:none repeat scroll 0% 0% black;color:white;text-align:center">Location</th>
+<th style="background:none repeat scroll 0% 0% black;color:white;text-align:center">Quota</th>
+<th style="background:none repeat scroll 0% 0% black;color:white;text-align:center">Backup</th>
+<th style="background:none repeat scroll 0% 0% black;color:white;text-align:center">Allocation</th>
+<th style="background:none repeat scroll 0% 0% black;color:white;text-align:center">Description</th>
+</tr>
+<tr>
+<td style="text-align:left;vertical-align:middle">HOME</td>
+<td style="text-align:left;vertical-align:middle">/global/home/users/$USER</td>
+<td style="text-align:left;vertical-align:middle">10GB</td>
+<td style="text-align:left;vertical-align:middle">Yes</td>
+<td style="text-align:left;vertical-align:middle">Per User</td>
+<td style="text-align:left;vertical-align:middle">HOME directory for permanent data<br>
+storage<br>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;vertical-align:middle">GROUP-SW</td>
+<td style="text-align:left;vertical-align:middle">/global/home/groups-sw/$GROUP</td>
+<td style="text-align:left;vertical-align:middle">200GB</td>
+<td style="text-align:left;vertical-align:middle">Yes</td>
+<td style="text-align:left;vertical-align:middle">Per Group</td>
+<td style="text-align:left;vertical-align:middle">GROUP directory for software and<br>
+data sharing with backup</td>
+</tr>
+<tr>
+<td style="text-align:left;vertical-align:middle">GROUP</td>
+<td style="text-align:left;vertical-align:middle">/global/home/groups/$GROUP</td>
+<td style="text-align:left;vertical-align:middle">400GB</td>
+<td style="text-align:left;vertical-align:middle">No</td>
+<td style="text-align:left;vertical-align:middle">Per Group</td>
+<td style="text-align:left;vertical-align:middle">GROUP directory for data sharing<br>
+without backup</td>
+</tr>
+<tr>
+<td style="text-align:left;vertical-align:middle">SCRATCH</td>
+<td style="text-align:left;vertical-align:middle">/global/scratch/$USER</td>
+<td style="text-align:left;vertical-align:middle">none</td>
+<td style="text-align:left;vertical-align:middle">No</td>
+<td style="text-align:left;vertical-align:middle">Per User</td>
+<td style="text-align:left;vertical-align:middle">SCRATCH directory with Lustre high<br>
+performance parallel file system<br>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;vertical-align:middle">CLUSTERFS</td>
+<td style="text-align:left;vertical-align:middle">/clusterfs/axl/$USER</td>
+<td style="text-align:left;vertical-align:middle">none</td>
+<td style="text-align:left;vertical-align:middle">No</td>
+<td style="text-align:left;vertical-align:middle">Per User</td>
+<td style="text-align:left;vertical-align:middle">Private storage for AXL condo</td>
+</tr>
+<tr>
+<td style="text-align:left;vertical-align:middle">CLUSTERFS</td>
+<td style="text-align:left;vertical-align:middle">/clusterfs/cumulus/$USER</td>
+<td style="text-align:left;vertical-align:middle">none</td>
+<td style="text-align:left;vertical-align:middle">No</td>
+<td style="text-align:left;vertical-align:middle">Per User</td>
+<td style="text-align:left;vertical-align:middle">Private storage for CUMULUS condo</td>
+</tr>
+<tr>
+<td style="text-align:left;vertical-align:middle">CLUSTERFS</td>
+<td style="text-align:left;vertical-align:middle">/clusterfs/esd/$USER</td>
+<td style="text-align:left;vertical-align:middle">none</td>
+<td style="text-align:left;vertical-align:middle">No</td>
+<td style="text-align:left;vertical-align:middle">Per User</td>
+<td style="text-align:left;vertical-align:middle">Private storage for ESD condos</td>
+</tr>
+<tr>
+<td style="text-align:left;vertical-align:middle">CLUSTERFS</td>
+<td style="text-align:left;vertical-align:middle">/clusterfs/geoseq/$USER</td>
+<td style="text-align:left;vertical-align:middle">none</td>
+<td style="text-align:left;vertical-align:middle">No</td>
+<td style="text-align:left;vertical-align:middle">Per User</td>
+<td style="text-align:left;vertical-align:middle">Private storage for CO2SEQ condo</td>
+</tr>
+<tr>
+<td style="text-align:left;vertical-align:middle">CLUSTERFS</td>
+<td style="text-align:left;vertical-align:middle">/clusterfs/nokomis/$USER</td>
+<td style="text-align:left;vertical-align:middle">none</td>
+<td style="text-align:left;vertical-align:middle">No</td>
+<td style="text-align:left;vertical-align:middle">Per User</td>
+<td style="text-align:left;vertical-align:middle">Private storage for NOKOMIS condo</td>
+</tr>
+</tbody>
+</table>
+<br>
+<b>NOTE</b>: HOME, GROUP, GROUP-SW and CLUSTERFS directories are located on a
+ highly reliable enterprise level BlueArc storage device. Since this 
+appliance also provides storage for many other mission critical file 
+systems, and it is not designed for high performance applications, 
+running large I/O dependent jobs on these file systems could greatly 
+degrade the performance of all the file systems that are hosted on this 
+device and affect hundreds of users, thus this behavior is explicitly 
+prohibited. HPCS reserves the right to kill these jobs without 
+notification once discovered. Jobs that have I/O requirement should use 
+the SCRATCH file system which is designed specifically for that purpose.</div>
+<br>
+
+<a name="recharge"></a>
+<h4>Recharge Model:</h4>
+<div>LAWRENCIUM is a Lab-fund platform for LC3 program. LBNL has made a 
+significant investment in developing this platform to meet the midrange 
+computing requirement at Berkeley Lab. The primary purpose of it is to 
+provide a sustainable way to host all the condo projects while meeting 
+the computing requirements from other users as well. To achieve this 
+goal, condo users are allowed to run within their condo contributions 
+for free. However normal users who would like to use the LAWRENCIUM 
+cluster are subject to the LBNL recharge rate. Condo users who would 
+need to run outside of their condo contributions are also subject to the
+ same recharge rate as normal users. For this purpose, condo users will 
+obtain either one or two projects/accounts when their accounts are 
+created on LAWRENCIUM, per the instruction we receive from the PI of the
+ condo project. They would need to provide the correct project when 
+running jobs inside or outside of their condo contributions, which will 
+be explained in detail in the Scheduler Configuration section below. The
+ current recharge model has been effective since Jan, 2011 with the 
+standard recharge rate of <b>$0.01 per Service Unit</b> (1 cent per 
+service unit, SU). Due to the hardware architecture difference we 
+discount effective recharge rate for older generations of hardware and 
+this may go down further when we have newer generations of hardware in 
+production, please refer to the following table for the current recharge
+ rate for each partition.<br>
+<br>
+<table align="center" border="1" cellspacing="0">
+<tbody>
+<tr>
+<th style="background:none repeat scroll 0% 0% black;color:white;text-align:center">Partition</th>
+<th style="background:none repeat scroll 0% 0% black;color:white;text-align:center">Nodes</th>
+<th style="background:none repeat scroll 0% 0% black;color:white;text-align:center">Node List</th>
+<th style="background:none repeat scroll 0% 0% black;color:white;text-align:center">SU to Core CPU Hour Ratio</th>
+<th style="background:none repeat scroll 0% 0% black;color:white;text-align:center">Effective Recharge Rate</th>
+</tr>
+
+<tr>
+<td style="text-align:center;vertical-align:middle">lr3</td>
+<td style="text-align:center;vertical-align:middle">337</td>
+<td style="text-align:center;vertical-align:middle">n0[000-203].lr3<br>
+n0[213-336].lr3</td>
+<td style="text-align:center;vertical-align:middle">0.50</td>
+<td style="text-align:center;vertical-align:middle">$0.0050 per Core CPU Hour</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">lr4</td>
+<td style="text-align:center;vertical-align:middle">141</td>
+<td style="text-align:center;vertical-align:middle">n0[000-095].lr4<br>
+n0[099-110].lr4<br>
+n0[112-135].lr4<br>
+n0[139-147].lr4</td>
+<td style="text-align:center;vertical-align:middle">0.75</td>
+<td style="text-align:center;vertical-align:middle">$0.0075 per Core CPU Hour</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle">lr5</td>
+<td style="text-align:center;vertical-align:middle">188</td>
+<td style="text-align:center;vertical-align:middle">n0[000-143].lr5<br>
+n0[148-191].lr5</td>
+<td style="text-align:center;vertical-align:middle">0.75</td>
+<td style="text-align:center;vertical-align:middle">$0.0075 per Core CPU Hour</td>
+</tr>
+<tr>
+<td style="text-align:center">lr6</td>
+<td style="text-align:center">244</td>
+<td style="text-align:center">n0[000-115,144-271].lr6</td>
+<td style="text-align:center">1.00</td>
+<td style="text-align:center">$0.0100 per Core CPU Hour</td>
+</tr>
+
+
+<tr>
+<td style="text-align:center;vertical-align:middle">cf1</td>
+<td style="text-align:center;vertical-align:middle">72</td>
+<td style="text-align:center;vertical-align:middle">n0[000-071].cf1</td>
+<td style="text-align:center;vertical-align:middle">0.40</td>
+<td style="text-align:center;vertical-align:middle">$0.0040 per Core CPU Hour</td>
+</tr>
+<tr>
+<td style="text-align:center">es1</td>
+<td style="text-align:center">24</td>
+<td style="text-align:center">n[0000-0023].es1 <br>
+</td>
+<td style="text-align:center">1.00</td>
+<td style="text-align:center">$0.0100 per Core CPU Hour <br>
+</td>
+</tr>
+<tr>
+<td style="text-align:center">cm1</td>
+<td style="text-align:center">14</td>
+<td style="text-align:center">n0[000-013].cm1 <br>
+</td>
+<td style="text-align:center">1.00</td>
+<td style="text-align:center">$0.0100 per Core CPU Hour <br>
+</td>
+</tr>
+</tbody>
+</table>
+<br>
+<b>NOTE</b>: The usage calculation is based on the resource that is
+ allocated to the job instead of the actual usage of the job. For 
+example, if a job asked for one lr4 node with one CPU requirement 
+(typical serial job case), and the job ran for 24 hours, since lr4 nodes
+ are allocated exclusively to the job (please refer to the following 
+Scheduler Configuration section for more detail), the charge that this 
+job incurred would be: $0.0075/(core*hour) * 1 node * 24 cores/node * 24 
+hours = $4.32, instead of: $0.0075/(core*hour) * 1 core * 24 hours = 
+$0.18.<br>
+<br>
+<b>NOTE</b>: For Many-Core nodes, recharges are calculated based on the host Core CPU Hour usage not the integrated core usage.</div>
+<br>
+
+<a name="scheduler"></a>
+<h4>Scheduler Configuration:</h4>
+<div>LAWRENCIUM cluster uses <a href="https://sites.google.com/a/lbl.gov/high-performance-computing-services-group/scheduler/slurm-usage-instructions">SLURM</a>
+ as the scheduler to manage jobs on the cluster. The following scheduler configuration has been introduced to LAWRENCIUM cluster and it is highly recommended that all users to get familiar with these configurations before using the LAWRENCIUM cluster.<br>
+<ul><li>For normal users to use the LAWRENCIUM resource the proper project account, <i>e.g.</i>,
+ "--account=ac_abc", is needed. The QoS "lr_normal" is also required based on the partition 
+that the job is submitted to,&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<i style="background-color:transparent;font-size:10pt">e.g.</i><span style="background-color:transparent;font-size:10pt">, "--qos=lr_normal".</span></li>
+<li>If a 
+debug job is desired the "lr_debug"&nbsp; QoS should be specified, <i>e.g.</i>, "--qos=lr_debug" so that the scheduler can adjust job priority 
+accordingly.</li>
+<li>Condo users please use the proper condo QoS, <i>e.g.</i>, "--qos=condo_xyz", as well as the proper recharge account "--account=lr_xyz".</li>
+<li>The partition name is always required in all cases, <i>e.g.</i>,
+ "--partition=lr6".</li>
+<li>A 
+standard fair-share policy with a decay half life value of 14 days (2 
+weeks) is enforced. All accounts are given equal shares value of 1.&nbsp; All users under each account associated within a partition is subjected to decay'g in priority based on the resources used and the overall parent account usage.&nbsp; &nbsp;Usage is a value between 0.0 and 1.0 that represents the the associates proportional usage of the system. A value of 0 indicates that the association is over-served.&nbsp; In other words that account has used its share of the resources and will be given a lower value of shares compared to users who have not used as much resources.</li>
+<li>Job prioritization is based on Age, Fairshare, Partition and QOS - note: lr_lowprio qos jobs are not given any prioritization and some QOS have higher values than others.&nbsp;&nbsp;</li>
+<li>If a node feature is not provided, the job will be 
+dispatched to nodes based on a predefined order, for "lr3" the order is:
+ lr3_c16, lr3_c20; for "lr5" the order is: lr5_c28, lr5_c20.</li></ul>
+
+<table border="1" cellspacing="0" style="text-align:center">
+<tbody>
+<tr>
+<th style="background:none 0% 0% repeat scroll black;color:white;text-align:center;width:88px;height:32px">Partition</th>
+<th style="background:none 0% 0% repeat scroll black;color:white;text-align:center;width:47px;height:32px">Nodes</th>
+<th style="background:none 0% 0% repeat scroll black;color:white;text-align:center;width:118px;height:32px">Node List</th>
+<th style="background:none 0% 0% repeat scroll black;color:white;text-align:center;width:79px;height:32px">Node<br>
+Features</th>
+<th style="background:none 0% 0% repeat scroll black;color:white;text-align:center;width:62px;height:32px">Shared</th>
+<th style="background:none 0% 0% repeat scroll black;color:white;text-align:center;width:135px;height:32px">QoS</th>
+<th style="background:none 0% 0% repeat scroll black;color:white;text-align:center;width:117px;height:32px">QoS Limit</th>
+<th style="background:none 0% 0% repeat scroll black;color:white;text-align:center;width:87px;height:32px">Account</th>
+</tr>
+
+<tr>
+<td style="text-align:center;vertical-align:middle;width:88px;height:323px">lr3<br>
+</td>
+<td style="text-align:center;vertical-align:middle;width:47px;height:323px">337<br>
+</td>
+<td style="text-align:center;width:118px;height:323px">
+<table border="1" cellspacing="0" style="border-collapse:collapse;border-color:rgb(136,136,136);border-width:1px">
+<tbody>
+<tr>
+<td style="vertical-align:middle;width:132px;height:139px">n0[000-163]<br>
+.lr3<br>
+n0[309-336].lr3</td>
+</tr>
+<tr>
+<td style="vertical-align:middle;width:132px;height:139px">n0[164-203]<br>
+.lr3<br>
+n0[213-308]<br>
+.lr3</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td style="text-align:center;width:79px;height:323px">
+<table border="1" cellspacing="0" style="border-collapse:collapse;border-color:rgb(136,136,136);border-width:1px">
+<tbody>
+<tr>
+<td style="vertical-align:middle;width:72px;height:136px">lr3<br>
+lr3_c16</td>
+</tr>
+<tr>
+<td style="vertical-align:middle;width:72px;height:137px">lr3<br>
+lr3_c20</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td style="text-align:center;vertical-align:middle;width:62px;height:323px">Exclusive
+</td>
+<td style="text-align:center;width:135px;height:323px">
+<table border="1" cellspacing="0" style="border-collapse:collapse;border-color:rgb(136,136,136);border-width:1px">
+<tbody>
+<tr>
+<td style="vertical-align:middle;width:122px;height:54px"><br>
+lr_normal<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:middle;width:122px;height:57px"><br>
+lr_debug</td>
+</tr>
+<tr>
+<td style="vertical-align:middle;width:122px;height:47px"><br>
+<br>
+condo_axl</td>
+</tr>
+<tr>
+<td style="vertical-align:middle;width:122px;height:35px"><br>
+condo_esd1</td>
+</tr>
+
+<tr>
+<td style="vertical-align:middle;width:122px;height:40px">condo_<br>
+nanotheory</td>
+</tr>
+<tr>
+<td style="vertical-align:middle;width:122px;height:70px">condo_nokomis<br>
+<hr>
+condo_jgicloud</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td style="text-align:center;width:117px;height:323px">
+<table border="1" cellspacing="0" style="border-collapse:collapse;border-color:rgb(136,136,136);border-width:1px">
+<tbody>
+<tr>
+<td style="vertical-align:middle;width:170px;height:35px">64 nodes max per job<br>
+72:00:00 wallclock limit
+</td>
+</tr>
+<tr>
+<td style="vertical-align:middle;width:170px;height:53px">4 nodes max per job<br>
+4 nodes in total<br>
+00:30:00 wallclock limit</td>
+</tr>
+<tr>
+<td style="vertical-align:middle;width:170px;height:35px">30 nodes max per group<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:middle;width:170px;height:35px">36 nodes max per group</td>
+</tr>
+
+<tr>
+<td style="vertical-align:middle;width:170px;height:35px">4 nodes max per group</td>
+</tr>
+<tr>
+<td style="vertical-align:middle;width:170px;height:35px">40 nodes max per group<br>
+<br>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td style="text-align:center;width:87px;height:323px">
+<table border="1" cellspacing="0" style="border-collapse:collapse;border-color:rgb(136,136,136);border-width:1px">
+<tbody>
+<tr>
+<td style="vertical-align:middle;width:81.0114px;height:152.011px">ac_*<br>
+pc_*</td>
+</tr>
+<tr>
+<td style="vertical-align:middle;width:81.0114px;height:31.0114px">lr_axl</td>
+</tr>
+<tr>
+<td style="vertical-align:middle;width:81.0114px;height:31.0114px">lr_esd1</td>
+</tr>
+
+<tr>
+<td style="vertical-align:middle;width:81.0114px;height:31.0114px">lr_<br>
+nanotheory</td>
+</tr>
+<tr>
+<td style="vertical-align:middle;width:81.0114px;height:31.0114px">lr_nokomis<br>
+<hr>
+lr_jgicloud</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;width:88px;height:351px">lr4</td>
+<td style="text-align:center;vertical-align:middle;width:47px;height:351px">108</td>
+<td style="text-align:center;vertical-align:middle;width:118px;height:351px">n0[000-095]<br>
+.lr4<br>
+n0[099-110]<br>
+.lr4<br>
+n0[112-135]<br>
+.lr4<br>
+n0[139-147]<br>
+.lr4</td>
+<td style="text-align:center;vertical-align:middle;width:79px;height:351px">lr4</td>
+<td style="text-align:center;vertical-align:middle;width:62px;height:351px">Exclusive</td>
+<td style="text-align:center;width:135px;height:351px">
+<table border="1" cellspacing="0" style="border-collapse:collapse;border-color:rgb(136,136,136);border-width:1px">
+<tbody>
+<tr>
+<td style="vertical-align:middle;width:104px;height:65px">lr_normal<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:middle;width:104px;height:78px">lr_debug</td>
+</tr>
+<tr>
+<td style="vertical-align:middle;width:104px;height:31px">condo_<br>
+minnehaha</td>
+</tr>
+<tr>
+<td style="vertical-align:middle;width:104px;height:31px">condo_<br>
+matminer<br>
+</td>
+</tr>
+<tr>
+<td style="width:104px;height:15px"><span style="font-size:13.3333px"><br>
+condo_co2seq</span>&nbsp;</td>
+</tr>
+<tr>
+<td style="width:104px;height:15px"><span style="font-size:13.3333px"><br>
+condo_cumulus</span></td>
+</tr>
+<tr>
+<td><br>
+condo_mp_lr2&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td style="text-align:center;width:117px;height:351px">
+<table border="1" cellspacing="0" style="border-collapse:collapse;border-color:rgb(136,136,136);border-width:1px">
+<tbody>
+<tr>
+<td style="vertical-align:middle;width:170px;height:35px">64 nodes max per job<br>
+72:00:00 wallclock limit
+</td>
+</tr>
+<tr>
+<td style="vertical-align:middle;width:170px;height:53px">4 nodes max per job<br>
+4 nodes in total<br>
+00:30:00 wallclock limit</td>
+</tr>
+<tr>
+<td style="vertical-align:middle;width:170px;height:35px">36 nodes max per group</td>
+</tr>
+<tr>
+<td style="vertical-align:middle;width:170px;height:35px">4 nodes max per group</td>
+</tr>
+<tr>
+<td>32 nodes max per group</td>
+</tr>
+<tr>
+<td>14 nodes max per group&nbsp;</td>
+</tr>
+<tr>
+<td>4 nodes max per group&nbsp;</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td style="text-align:center;width:87px;height:351px">
+<table border="1" cellspacing="0" style="border-collapse:collapse;border-color:rgb(136,136,136);border-width:1px">
+<tbody>
+<tr>
+<td style="vertical-align:middle;width:81.0114px;height:151.011px">ac_*<br style="font-size:13.3333px">
+<span style="font-size:13.3333px">pc_*</span></td>
+</tr>
+<tr>
+<td style="vertical-align:middle;width:81.0114px;height:31.0114px">lr_<br>
+minnehaha</td>
+</tr>
+<tr>
+<td style="vertical-align:middle;width:81.0114px;height:31.0114px">lr_<br>
+matminer</td>
+</tr>
+<tr>
+<td><br>
+lr_co2seq&nbsp;</td>
+</tr>
+<tr>
+<td>&nbsp;<br>
+lr_cumulus</td>
+</tr>
+<tr>
+<td><br>
+lr_mp&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;width:88px;height:186px">lr5</td>
+<td style="text-align:center;vertical-align:middle;width:47px;height:186px">144</td>
+<td style="text-align:center;vertical-align:middle;width:118px;height:186px">n0[000-143]<br>
+.lr5<br>
+<hr>
+n0[148-191]<br>
+.lr5</td>
+<td style="text-align:center;vertical-align:middle;width:79px;height:186px">lr5<br>
+<hr>
+lr5_c20,lr5</td>
+<td style="text-align:center;vertical-align:middle;width:62px;height:186px">Exclusive</td>
+<td style="text-align:center;width:135px;height:186px">
+<table border="1" cellspacing="0" style="border-collapse:collapse;border-color:rgb(136,136,136);border-width:1px">
+<tbody>
+<tr>
+<td style="vertical-align:middle;width:121.011px;height:61.0114px">lr_normal<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:middle;width:121.011px;height:87.0114px">lr_debug<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:middle;width:121.011px;height:25.0114px">condo_ceder<br>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td style="text-align:center;width:117px;height:186px">
+<table border="1" cellspacing="0" style="border-collapse:collapse;border-color:rgb(136,136,136);border-width:1px">
+<tbody>
+<tr>
+<td style="vertical-align:middle;width:161px;height:45px">64 nodes max per job<br>
+72:00:00 wallclock limit</td>
+</tr>
+<tr>
+<td style="vertical-align:middle;width:161px;height:53px">4 nodes in total<br>
+4 nodes max per job<br>
+00:30:00 wallclock limit</td>
+</tr>
+<tr>
+<td style="vertical-align:middle;width:161px;height:20px">44 nodes max per group</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td style="text-align:center;width:87px;height:186px">
+<table border="1" cellspacing="0" style="border-collapse:collapse;border-color:rgb(136,136,136);border-width:1px">
+<tbody>
+<tr>
+<td style="vertical-align:middle;width:81.0114px;height:151.011px">ac_*<br style="font-size:13.3333px">
+<span style="font-size:13.3333px">pc_*</span></td>
+</tr>
+<tr>
+<td style="vertical-align:middle;width:81.0114px;height:25.0114px">lr_ceder&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+
+<tr>
+<td style="text-align:center;vertical-align:middle;width:88px;height:456px">lr6</td>
+<td style="text-align:center;vertical-align:middle;width:47px;height:456px">244</td>
+<td style="text-align:center;vertical-align:middle;width:118px;height:456px">n0[000-115,<br>
+144-271]<br>
+.lr6</td>
+<td style="text-align:center;vertical-align:middle;width:79px;height:456px">lr6<br>
+<br>
+<font size="2">lr6_m192<br>
+</font><br>
+lr6_cas<br>
+<br>
+&nbsp;<br>
+lr6_sky</td>
+<td style="text-align:center;vertical-align:middle;width:62px;height:456px">Exclusive</td>
+<td style="text-align:center;width:135px;height:456px">
+<table border="1" cellspacing="0" style="border-collapse:collapse;border-color:rgb(136,136,136);border-width:1px">
+<tbody>
+<tr>
+<td style="vertical-align:middle;width:130.011px;height:60.0114px">lr_normal<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:middle;width:130.011px;height:81.0114px">lr_debug</td>
+</tr>
+<tr>
+<td style="vertical-align:middle;width:130.011px;height:41.0114px"><br>
+condo_esd2<br>
+<hr>
+condo_mp_lr6</td>
+</tr>
+<tr>
+<td style="vertical-align:middle;width:130.011px;height:25.0114px"><br>
+condo_cumulus_lr6</td>
+</tr>
+<tr>
+<td><br>
+condo_oppie&nbsp;<br>
+<hr>
+condo_omega<br>
+<hr>
+<br>
+condo_alsu<br>
+<br>
+<hr>
+<br>
+condo_chandra_lr6<br>
+<hr>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td style="text-align:center;width:117px;height:456px">
+<table border="1" cellspacing="0" style="border-collapse:collapse;border-color:rgb(136,136,136);border-width:1px">
+<tbody>
+<tr>
+<td style="vertical-align:middle;width:135px;height:63px">64 nodes max per job<br>
+72:00:00 wallclock limit
+</td>
+</tr>
+<tr>
+<td style="vertical-align:middle;width:135px;height:79px">4 nodes max per job<br>
+4 nodes in total<br>
+00:30:00 wallclock limit</td>
+</tr>
+<tr>
+<td style="vertical-align:middle;width:135px;height:63px"><br>
+16 nodes max per group<br>
+<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:middle;width:135px;height:31px">20 nodes max per group</td>
+</tr>
+<tr>
+<td style="width:135px;height:200px">&nbsp;<br>
+12 nodes max per group<br>
+<font size="1"><br>
+</font>
+<hr>
+4 nodes max per group&nbsp;
+<hr>
+<br>
+2 nodes max per group<br>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td style="text-align:center;width:87px;height:456px">
+<table border="1" cellspacing="0" style="border-collapse:collapse;border-color:rgb(136,136,136);border-width:1px">
+<tbody>
+<tr>
+<td style="vertical-align:middle;width:73px;height:134px">ac_*<br style="font-size:13.3333px">
+<span style="font-size:13.3333px">pc_*</span></td>
+</tr>
+<tr>
+<td style="vertical-align:middle;width:73px;height:68px">lr_esd2<br>
+<hr>
+lr_mp</td>
+</tr>
+<tr>
+<td style="vertical-align:middle;width:73px;height:47px"><br>
+lr_cumulus<br>
+<br>
+</td>
+</tr>
+<tr>
+<td style="width:73px;height:180px">lr_oppie&nbsp;<br>
+<hr>
+lr_omega<br>
+<hr>
+<br>
+lr_alsu<br>
+<hr>
+<br>
+lr_chandra</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+
+
+
+
+<tr>
+<td style="text-align:center;vertical-align:middle;width:88px;height:235px">cf1</td>
+<td style="text-align:center;vertical-align:middle;width:47px;height:235px">72</td>
+<td style="text-align:center;vertical-align:middle;width:118px;height:235px">n0[000-071]<br>
+.cf1</td>
+<td style="text-align:center;vertical-align:middle;width:79px;height:235px">cf1</td>
+<td style="text-align:center;vertical-align:middle;width:62px;height:235px">Exclusive</td>
+<td style="text-align:center;width:135px;height:235px">
+<table border="1" cellspacing="0" style="border-collapse:collapse;border-color:rgb(136,136,136);border-width:1px">
+<tbody>
+<tr>
+<td style="vertical-align:middle;width:101.011px;height:61.0114px">cf_normal<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:middle;width:101.011px;height:82.0114px">cf_debug</td>
+</tr>
+<tr>
+<td style="vertical-align:middle;width:101.011px;height:82.0114px">condo_mp_cf1</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td style="text-align:center;width:117px;height:235px">
+<table border="1" cellspacing="0" style="border-collapse:collapse;border-color:rgb(136,136,136);border-width:1px">
+<tbody>
+<tr>
+<td style="vertical-align:middle;width:133.011px;height:64.0114px">16 nodes max per job<br>
+72:00:00 wallclock limit </td>
+</tr>
+<tr>
+<td style="vertical-align:middle;width:133.011px;height:81.0114px">4 nodes max per job<br>
+4 nodes in total<br>
+00:30:00 wallclock limit</td>
+</tr>
+<tr>
+<td style="vertical-align:middle;width:133.011px;height:74.0114px">56 nodes max per job</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td style="text-align:center;width:87px;height:235px">
+<table border="1" cellspacing="0" style="border-collapse:collapse;border-color:rgb(136,136,136);border-width:1px">
+<tbody>
+<tr>
+<td style="vertical-align:middle;width:81.0114px;height:150.011px">ac_*<br style="font-size:13.3333px">
+<span style="font-size:13.3333px">pc_*</span></td>
+</tr>
+<tr>
+<td style="vertical-align:middle;width:81.0114px;height:72.0114px">lr_mp</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+
+
+<tr>
+<td style="text-align:center;width:88px;height:235px"><br>
+<br>
+es1</td>
+<td style="text-align:center;width:47px;height:235px"><br>
+<br>
+24</td>
+<td style="text-align:center;width:118px;height:235px">
+<table border="1" bordercolor="#888" cellspacing="0" style="border-collapse:collapse;border-color:rgb(136,136,136);border-width:1px">
+<tbody>
+<tr>
+<td style="width:126.167px;height:44.1667px"><br>
+n[0000-0011].es1</td>
+</tr>
+<tr>
+<td style="width:126.167px;height:37.1667px"><br>
+n[0012-0023].es1</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td style="text-align:center;width:79px;height:235px">
+<table border="1" bordercolor="#888" cellspacing="0" style="border-collapse:collapse;border-color:rgb(136,136,136);border-width:1px">
+<tbody>
+<tr>
+<td style="width:74.0114px;height:49.0114px"><br>
+es1_1080ti <br>
+</td>
+</tr>
+<tr>
+<td style="width:74.0114px;height:49.0114px"><br>
+es1_v100 <br>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td style="text-align:center;width:62px;height:235px"><br>
+<br>
+Shared</td>
+<td style="text-align:center;width:135px;height:235px">
+<table border="1" cellspacing="0" style="border-collapse:collapse;border-color:rgb(136,136,136);border-width:1px">
+<tbody>
+<tr>
+<td style="vertical-align:middle;width:101.011px;height:61.0114px">es_normal<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:middle;width:101.011px;height:82.0114px">es_debug</td>
+</tr>
+<tr>
+<td style="vertical-align:middle;width:101.011px;height:82.0114px">condo_mp_es1</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td style="text-align:center;width:117px;height:235px">
+<table border="1" bordercolor="#888" cellspacing="0" style="border-collapse:collapse;border-color:rgb(136,136,136);border-width:1px">
+<tbody>
+<tr>
+<td style="width:157.167px;height:38.1667px">20 nodes max per job<br>
+72:00:00 wallclock limit
+</td>
+</tr>
+<tr>
+<td style="width:157.167px;height:49.1667px">4 nodes max per job<br>
+4 nodes in total<br>
+00:30:00 wallclock limit</td>
+</tr>
+<tr>
+<td style="vertical-align:middle;width:133.011px;height:74.0114px">1 node max per job</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td style="text-align:center;width:87px;height:235px">
+<table border="1" cellspacing="0" style="border-collapse:collapse;border-color:rgb(136,136,136);border-width:1px">
+<tbody>
+<tr>
+<td style="vertical-align:middle;width:81.0114px;height:150.011px">ac_*<br style="font-size:13.3333px">
+<span style="font-size:13.3333px">pc_*</span></td>
+</tr>
+<tr>
+<td style="vertical-align:middle;width:81.0114px;height:72.0114px">lr_mp</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width:88px;height:64px"><br>
+&nbsp;csd_lr6_96<span>&nbsp;&nbsp;<br>
+(private)</span></td>
+<td style="text-align:center;width:47px;height:64px"><br>
+60</td>
+<td style="text-align:center;width:118px;height:64px">
+<div style="text-align:center"><span style="background-color:transparent;font-size:10pt"><br>
+</span></div>
+<div style="text-align:center"><span style="background-color:transparent;font-size:10pt">n0[088-103].lr6</span></div>
+<div style="text-align:center"><span style="background-color:transparent;font-size:10pt">n0[228-271].lr6</span></div>
+</td>
+<td style="text-align:center;width:79px;height:64px"><br>
+&nbsp;lr6, lr6_cas</td>
+<td style="text-align:center;width:62px;height:64px">&nbsp;<br>
+Exclusive</td>
+<td style="text-align:center;width:135px;height:64px">&nbsp;<br>
+condo_neugroup<br>
+<hr>
+condo_statmech</td>
+<td style="text-align:center;width:117px;height:64px">&nbsp;22 nodes max per group<br>
+<hr>
+22 nodes max per group</td>
+<td style="text-align:center;width:87px;height:64px">&nbsp;<br>
+lr_neugroup<br>
+<hr>
+lr_statmech&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td style="text-align:center;width:88px;height:16px">&nbsp;<br>
+csd_lr6_192<br>
+(private)</td>
+<td style="text-align:center;width:47px;height:16px">&nbsp;<br>
+84</td>
+<td style="text-align:center;width:118px;height:16px">&nbsp;<br>
+n0[144-227].lr6</td>
+<td style="text-align:center;width:79px;height:16px"><br>
+lr6,lr6_cas lr6_m192&nbsp;&nbsp;</td>
+<td style="text-align:center;width:62px;height:16px">&nbsp;<br>
+Exclusive</td>
+<td style="text-align:center;width:135px;height:16px">&nbsp;<br>
+condo_amos<br>
+<hr>
+condo_chandra_lr6<br>
+<br>
+<hr>
+condo_fstheory<br>
+condo_mhg2<br>
+condo_ninjaone<br>
+<hr>
+condo_mp_lr6<br>
+<br>
+<br>
+<br>
+</td>
+<td style="text-align:center;width:117px;height:16px">24 nodes max per group&nbsp;<br>
+<hr>
+2 nodes max per group&nbsp;<br>
+<hr>
+18 nodes max per group<br>
+<br>
+<hr>
+16 nodes max per group<br>
+<br>
+</td>
+<td style="text-align:center;width:87px;height:16px"><br>
+lr_amos&nbsp;
+<hr>
+lr_chandra<br>
+<br>
+<hr>
+lr_fstheory<br>
+lr_mhg2<br>
+lr_ninajone<br>
+<hr>
+lr_mp</td>
+</tr>
+
+</tbody>
+</table>
+
+</div>
+<div><b><br>
+</b></div>
+<div><b>How to Submit Jobs to <a name="gpu"> ES1 GPU </a>Partition </b></div>
+<div><br>
+To ensure the right ratio (2:1) of cpu cores assigned to a gpu job, make sure two flags are used correctly.</div>
+<div>Example:</div>
+<div><span>&nbsp;&nbsp;&nbsp; </span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>#!/bin/bash
+<pre style="margin-left:40px"># Job name:
+#SBATCH --job-name=test-gpu
+# Partition:
+#SBATCH --partition=es1
+# QoS:
+#SBATCH --qos=es_normal
+# Account:
+#SBATCH --account=ac_abc
+# GPUs:
+#SBATCH --gres=gpu:2
+# CPU cores:
+#SBATCH --cpus-per-task=4
+# Wall clock limit:
+#SBATCH --time=24:00:00
+</pre>
+</div>
+<br>
+<div><b>Low Priority QoS Jobs</b><br>
+LAWRENCIUM users are entitled to use the extra resource that is available across all LAWRENCIUM partitions except lr6. This is done through low priority QoSs "<b>lr_lowprio</b>" &nbsp;and your account is automatically subscribed to these QoSs during the account creation stage. You do not need to request for it explicitly. The low priority QoSs "lr_lowprio" &nbsp;have no limitation on the number of nodes and wallclock time. But it does come with a lower priority. By using these low priority QoSs you <b>will NOT incur any usage charges</b> described in the "<b>Recharge Model</b>" section above. What this means to users is that you now can scavenge free compute cycles when they are available. However these QoSs do not get a priority as high as the general QoSs, such as "lr_normal" and "lr_debug" or any of the condo QoSs, and it is subject to preemption when all the other QoSs become busy. Thus it has three implications:<br>
+<ol><li>
+
+    When system is busy, any job that is submitted with these QoSs will be pending and yield to other jobs which have higher priorities.</li>
+<li>
+    When system is busy and there are higher priority jobs pending, scheduler will preempt jobs that are running with these low priority QoSs. Preempted jobs can choose whether the job should be simply killed, or be automatically requeued after it is killed (at submission time, please see example below for detail). Please note that, since preemption could happen at any time, it would be very beneficial if your job is capable of checkpointing/restarting by itself, when you choose to requeue the job. Otherwise, you may need to verify data integrity manually before you want to run the job again.</li>
+<li>These jobs also don’t incur priority nor are used by the backfill function in slurm.&nbsp;</li>
+</ol>
+
+
+<a name="eg"></a>
+<b>Job Script Examples</b>
+<ol><li><span style="background-color:transparent;line-height:1.25;font-size:10pt">A
+ normal user from "ac_abc" account would like to run a job with 64 MPI 
+processes for 24 hours in "lr5" partition with email notifications.</span></li>
+<pre style="margin-left:40px">#!/bin/bash
+# Job name:
+#SBATCH --job-name=test
+#
+# Partition:
+#SBATCH --partition=lr5
+#
+# QoS:
+#SBATCH --qos=lr_normal
+#
+# Account:
+#SBATCH --account=ac_abc
+#
+# Processors:
+#SBATCH --ntasks=64
+#
+# Wall clock limit:
+#SBATCH --time=24:00:00
+#
+# Mail type:
+#SBATCH --mail-type=all
+#
+# Mail user:
+#SBATCH --mail-user=joe.doe@lbl.gov
+
+## Run command
+module load openmpi
+mpirun ./a.out
+</pre>
+<li><span style="background-color:transparent;line-height:1.15">A
+ condo user from "lr_xyz" group would like to run a job with 20 MPI 
+processes and a memory requirement of 6 GB per process for 24 hours in "lr3" partition.</span></li>
+<pre style="margin-left:40px">#!/bin/bash
+# Job name:
+#SBATCH --job-name=test
+#
+# Partition:
+#SBATCH --partition=lr3
+#
+# QoS:
+#SBATCH --qos=condo_xyz
+#
+# Account:
+#SBATCH --account=lr_xyz
+#
+# Processors:
+#SBATCH --ntasks=20
+#
+# Memory requirement:
+#SBATCH --mem-per-cpu=6G
+#
+# Wall clock limit:
+#SBATCH --time=24:00:00
+
+## Run command
+module load openmpi
+mpirun ./a.out
+</pre>
+<li><span style="background-color:transparent;line-height:1.15">A user from "ac_opq" group (normal or condo) would like </span><span style="background-color:transparent;line-height:1.15">run a low priority job with 20 MPI processes for 24 hours in "lr4" partition, and would like not to requeue the job in the event when the job is preempted.</span></li>
+<pre style="margin-left:40px">#!/bin/bash
+# Job name:
+#SBATCH --job-name=test
+#
+# Partition:
+#SBATCH --partition=lr4
+#
+# QoS:
+#SBATCH --qos=lr_lowprio
+#
+# Account:
+#SBATCH --account=ac_opq
+#<br># Requeue:
+###SBATCH --requeue    ### only needed if requeue is desired ###
+#
+# Processors:
+#SBATCH --ntasks=20
+#
+# Wall clock limit:
+#SBATCH --time=24:00:00<br><br>## Run command
+module load openmpi
+mpirun ./a.out
+</pre>
+</ol>
+
+
+
+
+
+
+
+
+</div>
+<span>&nbsp;&nbsp; &nbsp;</span><br>
+
+<h4>Software Configuration:</h4>
+<div>LAWRENCIUM uses <a href="https://sites.google.com/a/lbl.gov/high-performance-computing-services-group/getting-started/sl6-module-farm-guide" style="font-size:small;background-color:transparent;line-height:1.25">Environment Modules</a> to manage the cluster wide software installation.</div>
+<br>
+
+<h4>Cluster Status:</h4>
+<div>Please visit <a href="http://metacluster.lbl.gov/warewulf" rel="nofollow">here</a> for the live status of LAWRENCIUM cluster.</div>
+<br>
+
+<h4>Additional Information:</h4>
+<div>Please use <a href="https://lbl.service-now.com" rel="nofollow">Service Now</a> or send email to <a href="mailto:hpcshelp@lbl.gov">hpcshelp@lbl.gov</a> for any inquiries or service requests.</div>
+
